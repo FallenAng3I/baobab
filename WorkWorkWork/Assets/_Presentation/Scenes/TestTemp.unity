@@ -156,8 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270a9dbf512ab8b4ba351399fa9392f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <JumpForce>k__BackingField: 0
-  rotationSpeed: 0
+  <JumpForce>k__BackingField: 4
   movementSpeed: 0
 --- !u!54 &344606158
 Rigidbody:
@@ -377,7 +376,7 @@ GameObject:
   - component: {fileID: 1151991148}
   - component: {fileID: 1151991147}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: InputListener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,7 +565,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3600d8e641c1dae47988f7234ca084fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

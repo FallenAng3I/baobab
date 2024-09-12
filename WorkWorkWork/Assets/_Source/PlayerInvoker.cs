@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class PlayerInvoker
 {
     private PlayerMovement playerMovement;
@@ -7,7 +5,7 @@ public class PlayerInvoker
 
     public PlayerInvoker(Player player)
     {
-        playerMovement = new();
+        playerMovement = new PlayerMovement();
         this.player = player;
     }
 

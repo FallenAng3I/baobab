@@ -4,11 +4,10 @@ public class InputListener : MonoBehaviour
 {
     [SerializeField] private Player player;
     private PlayerInvoker playerInvoker;
-    //public PlayerMovement playerMovement;
 
     private void Awake()
     {
-        playerInvoker = new(player);
+        playerInvoker = new PlayerInvoker(player);
     }
 
     void Update()
@@ -20,7 +19,7 @@ public class InputListener : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //что-то на уфимском
+            playerInvoker.InvokeJump();
         }
     }
 }
