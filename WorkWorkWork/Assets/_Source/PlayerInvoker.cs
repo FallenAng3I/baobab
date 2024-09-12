@@ -10,4 +10,9 @@ public class PlayerInvoker
         playerMovement = new();
         this.player = player;
     }
+
+    public void InvokeJump()
+    {
+        playerMovement.Jump(player.JumpForce, player.Rb);
+    }
 }
