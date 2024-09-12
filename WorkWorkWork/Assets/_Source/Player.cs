@@ -4,7 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [field: SerializeField] public float JumpForce { get; private set; }
-    //[SerializeField] private float rotationSpeed;
+    [SerializeField] private float rotationSpeed;
     [SerializeField] private float movementSpeed;
 
     public Rigidbody Rb { get; private set; }
@@ -12,9 +12,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         Rb = GetComponent<Rigidbody>();
-        JumpForce = 5f;
-        movementSpeed = 10f;
-        //rotationSpeed = 200f;
     }
 
     public void Move(Vector3 direction)
@@ -33,5 +30,11 @@ public class Player : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, 1.1f);
+    }
+
+    public void Rotate(float horizontalInput)
+    {
+        float rotationAmount = horizontalInput * rotationSpeed * Time.fixedDeltaTime;
+        transform.Rotate(0, rotationAmount, 0);
     }
 }

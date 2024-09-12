@@ -13,6 +13,7 @@ public class InputListener : MonoBehaviour
     void Update()
     {
         ReadJump();
+        ReadMovement();
     }
 
     private void ReadJump()
@@ -21,5 +22,31 @@ public class InputListener : MonoBehaviour
         {
             playerInvoker.InvokeJump();
         }
+    }
+
+    private void ReadMovement()
+    {
+        Vector3 direction = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            direction += Vector3.forward;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            direction += Vector3.back;
+        }
+        player.Move(direction);
+        
+        float horizontalInput = 0f;
+        if (Input.GetKey(KeyCode.A))
+        {
+            horizontalInput = -1f;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            horizontalInput = 1f;
+        }
+        player.Rotate(horizontalInput);
     }
 }
