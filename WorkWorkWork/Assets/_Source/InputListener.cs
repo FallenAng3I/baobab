@@ -27,17 +27,16 @@ public class InputListener : MonoBehaviour
     private void ReadMovement()
     {
         Vector3 direction = Vector3.zero;
-
+        
         if (Input.GetKey(KeyCode.W))
         {
-            direction += Vector3.forward;
+            direction = player.transform.forward;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            direction += Vector3.back;
+            direction = -player.transform.forward;
         }
-        player.Move(direction);
-        
+
         float horizontalInput = 0f;
         if (Input.GetKey(KeyCode.A))
         {
@@ -47,6 +46,7 @@ public class InputListener : MonoBehaviour
         {
             horizontalInput = 1f;
         }
-        player.Rotate(horizontalInput);
+
+        playerInvoker.InvokeMove(direction, horizontalInput);
     }
 }

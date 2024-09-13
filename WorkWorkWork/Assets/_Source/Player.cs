@@ -14,27 +14,18 @@ public class Player : MonoBehaviour
         Rb = GetComponent<Rigidbody>();
     }
 
-    public void Move(Vector3 direction)
-    {
-        Rb.MovePosition(Rb.position + direction * movementSpeed * Time.fixedDeltaTime);
-    }
-
-    public void ApplyJump()
-    {
-        if (IsGrounded())
-        {
-            Rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
-        }
-    }
-
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, 1.1f);
     }
 
-    public void Rotate(float horizontalInput)
+    public float GetRotationSpeed()
     {
-        float rotationAmount = horizontalInput * rotationSpeed * Time.fixedDeltaTime;
-        transform.Rotate(0, rotationAmount, 0);
+        return rotationSpeed;
+    }
+
+    public float GetMovementSpeed()
+    {
+        return movementSpeed;
     }
 }
