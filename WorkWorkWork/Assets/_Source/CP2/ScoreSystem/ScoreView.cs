@@ -5,9 +5,14 @@ namespace _Source.CP2.ScoreSystem
 {
     public class ScoreView : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI scoreText;
+        [SerializeField] private TextMeshProUGUI scoreText; 
         private Score _score;
 
+        public void Construct(Score score)
+        {
+            _score = score;
+        }
+        
         public void Bind()
         {
             _score.OnScoreChange += DrawScore;

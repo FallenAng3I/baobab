@@ -18,6 +18,8 @@ namespace _Source.CP2.Core
             _game = new(_score);
             inputListener.Construct(_game);
             clickItem.Construct(_score);
+            scoreView.Construct(_score);
+            
 
             scoreView.Bind();
             _game.StartGame();

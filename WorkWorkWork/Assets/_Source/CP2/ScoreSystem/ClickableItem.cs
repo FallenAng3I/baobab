@@ -15,5 +15,13 @@ namespace _Source.CP2.ScoreSystem
         {
             _score.AddScore(-1);
         }
+
+        private void SetupMotor(HingeJoint hg)
+        {
+            //hg.motor.targetVelocity = 0;
+            var motor = hg.motor;
+            motor.targetVelocity = 0; //  ||   motor.targetVelocity *= -1;
+            hg.motor = motor;
+        }
     }
 }
