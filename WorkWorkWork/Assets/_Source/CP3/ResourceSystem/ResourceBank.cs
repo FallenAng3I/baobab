@@ -14,6 +14,19 @@ namespace CP3.ResourceSystem
         {
             InitResource();
         }
+        
+        private static ResourceBank source = null;
+
+        public static ResourceBank Source
+        {
+            get
+            {
+                if (source == null)
+                    source = new();
+
+                return source;
+            }
+        }
 
         private void InitResource()
         {
@@ -36,7 +49,5 @@ namespace CP3.ResourceSystem
 
             return false;
         }
-        
-        
     }
 }
