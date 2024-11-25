@@ -1,7 +1,7 @@
-using _Source.CP2.Core;
+using CP2.Core;
 using UnityEngine;
 
-namespace _Source.CP2.InputSystem
+namespace CP2.InputSystem
 {
     public class InputListener : MonoBehaviour
     {
@@ -22,7 +22,8 @@ namespace _Source.CP2.InputSystem
         {
             if (Input.GetKeyDown(exitAppKey))
             {
-               _game.FinishGame(); 
+               _game.FinishGame();
+               Application.Quit();
             }
         }
     }

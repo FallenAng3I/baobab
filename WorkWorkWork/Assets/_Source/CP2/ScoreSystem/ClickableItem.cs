@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Source.CP2.ScoreSystem
+namespace CP2.ScoreSystem
 {
     public class ClickableItem : MonoBehaviour
     {

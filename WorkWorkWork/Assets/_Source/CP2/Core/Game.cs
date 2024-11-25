@@ -1,6 +1,6 @@
-using _Source.CP2.ScoreSystem;
+using CP2.ScoreSystem;
 
-namespace _Source.CP2.Core
+namespace CP2.Core
 {
     public class Game
     {

@@ -1,13 +1,14 @@
-using _Source.CP2.InputSystem;
-using _Source.CP2.ScoreSystem;
+using CP2.InputSystem;
+using CP2.ScoreSystem;
 using UnityEngine;
 
-namespace _Source.CP2.Core
+namespace CP2.Core
 {
     public class BootStrapper : MonoBehaviour
     {
         [SerializeField] private InputListener inputListener;
         [SerializeField] private ClickableItem clickItem;
+        [SerializeField] private MovingClickableItem mClickItem;
         [SerializeField] private ScoreView scoreView;
         private Game _game;
         private Score _score;
@@ -18,6 +19,7 @@ namespace _Source.CP2.Core
             _game = new(_score);
             inputListener.Construct(_game);
             clickItem.Construct(_score);
+            mClickItem.Construct(_score);
             scoreView.Construct(_score);
             
 

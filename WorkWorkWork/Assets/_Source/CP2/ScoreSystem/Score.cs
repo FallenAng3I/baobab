@@ -1,6 +1,6 @@
 using System;
 
-namespace _Source.CP2.ScoreSystem
+namespace CP2.ScoreSystem
 {
     public class Score
     {
